@@ -1,0 +1,257 @@
+/*
+	Plugin Name: Repo Showcase
+	Description: Introducing RepoShowcase, the ultimate plugin for seamlessly showcasing GitHub repositories on your website. With RepoShowcase, effortlessly integrate and display your GitHub projects directly onto your WordPress site. Enhance your online presence and engage your audience by effortlessly embedding GitHub repositories with style and ease.
+	Version: 1.0.0
+	Author: Abdul Samad
+	Author URI: https://getabdulsamad.com
+*/
+
+/*** Repositories Card Styling ***/
+.repo-showcase-github-repositories a {
+  transition-property: all;
+  transition-duration: 0.6s;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card {
+  background-color: #f6f8fa;
+  border-radius: 8px;
+  margin-top: 90px;
+  border: 1px solid rgba(208, 215, 222, 0.25);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  clear: both;
+  display: flex;
+  flex-direction: column;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-user-image {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 92px;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-user-image
+  img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  left: 20px;
+  top: -75px;
+  border-radius: 50%;
+  z-index: 99;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px -2px 8px 0px;
+  transition-property: all;
+  transition-duration: 0.6s;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-user-image::before {
+  content: '';
+  background-image: url('/dev/wp-content/plugins/repo-showcase/assets/icon/github-icon.svg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  opacity: 65%;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-user-image
+  a:hover
+  img {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 0px 0px;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp {
+  background-color: #fff;
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 0 8px 8px;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  .repo-showcase-card-content-header
+  h3 {
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  .repo-showcase-card-content-header
+  p {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  ul {
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  ul
+  li {
+  border-bottom: 1px solid rgba(208, 215, 222, 0.25);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  ul
+  li:last-child {
+  border-bottom: 0;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  ul
+  li
+  span {
+  font-size: 18px;
+  opacity: 65%;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  ul
+  li
+  i {
+  opacity: 65%;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  ul
+  li:nth-child(2)
+  i {
+  font-size: 18px;
+  padding-left: 5px;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  ul
+  li:nth-child(3)
+  i {
+  font-size: 15px;
+  padding-left: 2px;
+}
+.repo-showcase-github-repositories
+  .repo-showcase-repository-page
+  .repo-showcase-repository-cards-wrp
+  .repo-showcase-repository-card
+  .repo-showcase-card-content-wrp
+  ul
+  li:nth-child(4)
+  i {
+  font-size: 15px;
+  padding-left: 5px;
+}
+.repo-showcase-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.repo-showcase-pagination button {
+  font-size: 16px;
+  font-weight: 500;
+}
+/*** Error Message ***/
+.data-fetching-error {
+  background-color: #f6f8fa;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.45;
+  padding: 20px;
+  display: block;
+  max-width: 33.333%;
+  width: 100%;
+  text-align: center;
+  color: #ff0000;
+  border: 1px solid rgba(208, 215, 222, 0.25);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/*** Media Queries ***/
+@media only screen and (max-width: 991px) {
+  .repo-showcase-github-repositories
+    .repo-showcase-repository-page
+    .repo-showcase-repository-cards-wrp {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 768px) {
+  .repo-showcase-github-repositories
+    .repo-showcase-repository-page
+    .repo-showcase-repository-cards-wrp {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
